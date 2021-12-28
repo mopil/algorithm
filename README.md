@@ -5,4 +5,4 @@
 
 ## What I learned
 [2021-12-29]
-  - itertools 사용법
+  - [itertools 사용법](https://seu11ee.tistory.com/5)
