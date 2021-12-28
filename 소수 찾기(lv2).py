@@ -21,4 +21,4 @@ def solution(s):
     for n in p:
         if isPrime(n):
             result.append(n)
-    return result
+    return len(result)
