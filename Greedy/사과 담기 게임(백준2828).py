@@ -22,4 +22,3 @@ for drop in drops:
             end -= move
         total += move
 print(total)
-
