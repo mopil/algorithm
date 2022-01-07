@@ -1,7 +1,7 @@
 
 numOfLeak, maxTapeLength = map(int, input().split())
 leaks = list(map(int, input().split()))
-leaks = sorted(leaks)
+leaks.sort()
 startIndex = 0
 endIndex = 1
 count = 1
