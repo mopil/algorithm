@@ -12,3 +12,4 @@ while True:
 
 for i in range(len(result)):
     print(f"Case {i+1}: {result[i]}")
+
