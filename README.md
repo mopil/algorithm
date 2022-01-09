@@ -40,4 +40,10 @@
  - try ~ except로 예외처리
   <br>
 
+[코드 한 줄로 리스트 요소 모두 출력하기]
+  ```python
+  result = [1,2,3]
+  print(" ".join(str(i) for i in result))
+  ```
+  <br>
  
