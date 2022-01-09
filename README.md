@@ -9,16 +9,21 @@
 [루트 적용하기]
   - Math.sqrt()
   - n ** 0.5
+  <br>
  
 [정렬]
   - sorted(list, reverse=bool) : return 정렬된 객체
   - list.sort(reverse=bool)
+  <br>
+
 
 [문자열 하나하나 잘라서 입력받기]
   - arr = list(input())
+  <br>
 
 [중복 제거하기]
   - set() # 집합에 넣었다 빼기
+  <br>
 
 [조합, 중복조합]
   ```python
@@ -29,3 +34,10 @@
   for cr in itertools.combinations_with_replacement(['A','B','C'], 2):
     print(c)    # 중복 가능이므로 ('A','A') 등도 포함.
   ```
+  <br>
+  
+[리스트 IndexError 무시하기]
+ - try ~ except로 예외처리
+  <br>
+
+ 
