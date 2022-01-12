@@ -59,4 +59,11 @@
   print(" ".join(str(i) for i in result))
   ```
   <br>
+  <br>
+  
+[사용자입력 빠르게 받기]
+  ```python
+  import sys
+  input = sys.stdin.readline # rstrip()을 나중에 붙혀줘야 개행문자 제거 됨
+  ```
  
