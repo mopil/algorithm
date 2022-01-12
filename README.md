@@ -59,7 +59,6 @@
   print(" ".join(str(i) for i in result))
   ```
   <br>
-  <br>
   
 [사용자입력 빠르게 받기]
   ```python
