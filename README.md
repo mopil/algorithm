@@ -65,4 +65,13 @@
   import sys
   input = sys.stdin.readline # rstrip()을 나중에 붙혀줘야 개행문자 제거 됨
   ```
+  <br>
+  
+[파이썬은 함수 리턴값 가능]
+  ```python
+  def func():
+    return 1, 2, 3
+  a, b, c = func() # 정확히는 언패킹이라고 함
+  ```
+  
  
