@@ -4,9 +4,10 @@ result = []
 for i in range(cases):
     num_of_papers, wonder = map(int, input().split())
     temp = list(map(int, input().split()))
-    q = []
-    for k in range(num_of_papers):
-        q.append([k, temp[k]])
+    # q = []
+    # for k in range(num_of_papers):
+    #     q.append([k, temp[k]])
+    q = [ [k, temp[k]] for k in range(num_of_papers) ]
 
     target = q[wonder]
     printing = 0
