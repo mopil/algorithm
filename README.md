@@ -73,5 +73,16 @@
     return 1, 2, 3
   a, b, c = func() # 정확히는 언패킹이라고 함
   ```
+  <br>
   
+ [최대 공약수와 최소 공배수]
+  ```python
+  import math
+  
+  # 최소 공배수(LCM)을 구하는 함수
+  def lcm(a,b):
+    return a * b // math.gcd(a,b) # 최대 공약수 구하는건 math 라이브러리에 있음
+    
+  ```
+  <br>
  
