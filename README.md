@@ -85,4 +85,15 @@
     
   ```
   <br>
+  
+  [유클리드 호제법]
+    - 자연수 a,b의 최대 공약수는 b, a%b의 최대 공약수와 동일하다
+    - 재귀로 gcd함수 구현
+    ```python
+    def gcd(a, b):
+      if a % b == 0:
+        return b
+      else:
+        return gcd(b, a % b)
+    ```
  
