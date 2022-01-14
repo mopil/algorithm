@@ -19,21 +19,21 @@ count = 0
 #                 maze[nx][ny] = maze[x][y] + 1
 #                 q.append((nx, ny))
 #     return maze[n - 1][m - 1]
-def bfs(start):
-    q = deque()
-    q.append(start)
-    while q:
-        now = q.popleft()
-        minus = now - 1
-        plus = now + 1
-        jump = now * 2
-        q.append(minus)
-        q.append(plus)
-        q.append(jump)
-        for i in range(3):
-            if now > end:
-
-
+# def bfs(start):
+#     q = deque()
+#     q.append(start)
+#     while q:
+#         now = q.popleft()
+#         minus = now - 1
+#         plus = now + 1
+#         jump = now * 2
+#         q.append(minus)
+#         q.append(plus)
+#         q.append(jump)
+#         for i in range(3):
+#             if now > end:
+#
+#
 
 
 
