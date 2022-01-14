@@ -21,7 +21,7 @@ def dfs(graph, start):
             stack.extend(graph[node])
 
 
-for i in range(1,nodes):
+for i in range(1, nodes+1):
     if i not in visited:
         dfs(graph, i)
         count += 1
