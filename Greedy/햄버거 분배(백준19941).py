@@ -1,41 +1,17 @@
+# 사람을 기준으로 최대한 왼쪽 부터 탐색을 시작한다 (안그러면 마지막 사람은 먹을 수 있는데도 체크를 못 할 수 있다)
 N, K = map(int, input().split())
-table = input()
-
+table = list(input())
 count = 0
-peoples = table.count('P')
-checked = []
 for i in range(len(table)):
     if table[i] == 'P':
-        checked.append([i, table[i]])
+        left = max(0, i - K)
+        right = min(N, i + K + 1) # range에 넣을거라 마지막을 인덱스로 포함시키려고 +1
+        # 왼쪽 부터 탐색할거라, 최초로 햄버거가 등장하면 break하면 됨
+        for j in range(left, right):
+            if table[j] == 'H':
+                table[j] = 0
+                count += 1
+                break
 
-def solution(table):
-    global checked
-    count = 0
-    for i in range(len(table)):
-        if table[i] == 'P' and [i, table[i]] in checked:
-            start = i
-            j = i
-            try:
-                while table[j] != 'H':
-                    j += 1
-            except:
-                j = N - 1
-            end = j
-            gap = end - start
-            if gap > K:
-                count -= 1
-                checked.remove([i, table[i]])
-    return count
+print(count)
 
-a = solution(table)
-temp = list(table)
-temp.reverse()
-temp = "".join(temp)
-b = solution(temp)
-
-total = peoples + (a+b)
-print(temp, checked)
-print(total, peoples, a, b)
-
-# 4 1
-# HPHP
