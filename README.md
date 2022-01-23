@@ -1,9 +1,10 @@
-# 알고리즘 공부 기록
+
 
 ### Algorithm Tier
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=mopil1102)](https://solved.ac/mopil1102/)
 
-## 📜 Tips
+
+# 📜 Tips
 ### 신기한 파이썬 기능
   - 한국어 변수, 함수명 사용 가능
   - 함수 리턴값 여러개 가능
@@ -27,10 +28,19 @@
   - 문자열 + 연산자 사용 가능 : ```"happy" + "birthday"```
   - 리스트 + 연산자 사용 가능 : ```[1, 2, 3] + [4, 5]```
   - 리스트에 타입 다른 요소 넣기 가능 : ```[1, "hello", 3, 'a']```
-  - 문자열에 숫자 있는지 판단하기 : 리스트 메서드로 제공됨 ```s.isdigit()```
+  - 문자열에 숫자 있는지 판단하기 : String 내장 메서드로 제공됨 ```s.isdigit()```
   <br>
-<hr>
 
+## BFS & DFS
+- 특정 위치에 대하여 BFS를 수행하면 결과값은 항상 최적으로 도출된다 (BFS의 특징)
+- 1차원(수직선) 위를 가장 적은 이동횟수로 탐색하려면 visited[nx] = visited[x] + 1를 활용한다 (숨바 꼭질)
+- 2차원 위를 단 한번만 BFS하는 경우도 visited[nx] = visited[x] + 1를 활용하면 된다 (미로 찾기)
+- 단, 2차원 위를 여러번 BFS하는 경우는 시간초과가 뜰 수 있으므로 visited를 True,False로 관리하고 움직인 거리는 dist로 따로 관리해야 한다 (아기 상어)
+
+
+<br>
+
+## Etc
 [시간복잡도]
   <br>시간제한 1초인 경우
   - N < 500 : O(N<sup>3</sup>) (3중 반복문)
