@@ -1,16 +1,4 @@
-from collections import deque
-def solution(n, times):
-    answer = min(times)
-    i = 1
-    temp = deque()
-    while n > 0:
-        for t in times:
-            temp.append(t * i)
-        target = min(temp)
-        answer = target
-        n -= 1
-        temp.popleft(target)
-        i += 1
-    return answer
-
-solution(6, [7,10])
+record = ["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"]
+for r in record:
+    a,b = r.split()
+    print(a,b)

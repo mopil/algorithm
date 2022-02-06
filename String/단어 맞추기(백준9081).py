@@ -6,7 +6,6 @@ n = int(input().rstrip())
 
 for _ in range(n):
     word = input().rstrip()
-    #l_word = sorted(list(word), reverse=True)
     l_word = list(word)
 
     index = 0
