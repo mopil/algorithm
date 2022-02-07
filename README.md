@@ -2,6 +2,13 @@
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=mopil1102)](https://solved.ac/mopil1102/)  &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="http://mazandi.herokuapp.com/api?handle=mopil1102&theme=cold"/>
 
+# 📑자료실
+
+[코테 집중 백준 문제집 모음](https://github.com/tony9402/baekjoon)
+<br>
+[최근 기업 알고리즘 출제 동향](https://github.com/tony9402/baekjoon/blob/main/CodingTest.md)
+<br>
+
 
 # 📜 Tips
 ### 신기한 파이썬 기능
@@ -33,7 +40,6 @@
   - 문자열 뒤집기 : ```arr_string[::-1]```
   <br>
 
-<br>
 
 ## Etc
 [시간복잡도]
