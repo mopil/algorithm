@@ -38,6 +38,7 @@
   - 2차원 리스트 1차원 리스트로 변환하기 : ```sum(arr, []) # arr : 2차원 리스트```
   - for-else 문 : for문을 다 돌았을 때 break로 빠져나오지 못하면 else문 수행 되는 문법이 존재함
   - 문자열 뒤집기 : ```arr_string[::-1]```
+  - 최대 재귀한도 해제하기 : ```sys.setrecursionlimit(10000)```
   <br>
 
 
