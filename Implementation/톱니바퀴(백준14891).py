@@ -29,11 +29,22 @@ for _ in range(rotate_num):
     target_gear -= 1
 
     # 돌아갈 톱니들 먼저 체크
-    for j in [0, 1, 2]:
-        if gears[j][2] != gears[j+1][6]:
-            will_rotate[j] = True
-            will_rotate[j+1] = True
-
+    # 왼쪽으로 비교
+    cur = target_gear
+    while True:
+        if cur == 0: break
+        if gears[cur][6] != gears[cur-1][2]:
+            will_rotate[cur-1] = True
+        else: break
+        cur -= 1
+    # 오른쪽으로 비교
+    cur = target_gear
+    while True:
+        if cur == 3: break
+        if gears[cur][2] != gears[cur+1][6]:
+            will_rotate[cur+1] = True
+        else: break
+        cur += 1
     rotate_logic = []
     if target_gear == 0:
         rotate_logic = [(1, direction * -1), (2, direction), (3, direction * -1)]
