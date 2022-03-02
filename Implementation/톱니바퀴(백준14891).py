@@ -7,21 +7,13 @@ S극 : 1
 '''
 
 
-def rotate_clockwise(target_gear):
-    length = len(gears[target_gear-1])
-    tmp = gears[target_gear-1][-1]
-    for i in range(length-2, -1, -1):
-        gears[target_gear-1][i+1] = gears[target_gear-1][i]
-    gears[target_gear-1][0] = tmp
-
-
-def rotate_anti_clockwise(target_gear):
-    length = len(gears[target_gear-1])
-    tmp = gears[target_gear-1][0]
-    for i in range(length-2):
-        gears[target_gear-1][i] = gears[target_gear-1][i+1]
-    gears[target_gear-1][-1] = tmp
-
+def rotate(target, dir):
+    if dir == -1: # 반시계
+        temp = gears[target].pop(0)
+        gears[target].append(temp)
+    elif dir == 1: # 시계
+        temp = gears[target].pop()
+        gears[target].insert(0, temp)
 
 '''
 1번 톱니의 2번 인덱스 <-> 2번 톱니의 6번 인덱스
@@ -32,24 +24,32 @@ def rotate_anti_clockwise(target_gear):
 gears = [list(input()) for _ in range(4)]
 rotate_num = int(input())
 for _ in range(rotate_num):
-    rotated = [False for _ in range(4)]
-    target_gear, rotate = map(int, input().split())
-    if rotate == 1: # 시계방향
-        rotate_clockwise(target_gear)
-    else:
-        rotate_anti_clockwise(target_gear)
-    rotated[target_gear-1] = True
+    will_rotate = [False for _ in range(4)]
+    target_gear, direction = map(int, input().split())
+    target_gear -= 1
 
-    # 나머지 톱니들 회전 처리
+    # 돌아갈 톱니들 먼저 체크
     for j in [0, 1, 2]:
-        if gears[j][2] != gears[j][6]:
-            for i in [j, j+1]:
-                if not rotated[i]:
-                    if rotate == 1:  # 시계방향
-                        rotate_anti_clockwise(i)
-                    else:
-                        rotate_clockwise(i)
-                    rotated[i] = True
+        if gears[j][2] != gears[j+1][6]:
+            will_rotate[j] = True
+            will_rotate[j+1] = True
+
+    rotate_logic = []
+    if target_gear == 0:
+        rotate_logic = [(1, direction * -1), (2, direction), (3, direction * -1)]
+    elif target_gear == 1:
+        rotate_logic = [(0, direction * -1), (2, direction * -1), (3, direction)]
+    elif target_gear == 2:
+        rotate_logic = [(1, direction * -1), (3, direction * -1), (0, direction)]
+    elif target_gear == 3:
+        rotate_logic = [(2, direction * -1), (1, direction), (0, direction * -1)]
+
+    rotate(target_gear, direction)
+    for rl in rotate_logic:
+        gear, dir = rl[0], rl[1]
+        if will_rotate[gear]:
+            rotate(gear, dir)
+
 # 점수 계산
 score = 0
 if gears[0][0] == "1": score += 1
