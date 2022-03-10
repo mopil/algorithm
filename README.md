@@ -22,18 +22,8 @@
       return "맞았습니다"
     ```
   - 수학적 대소비교 가능 ( 0 <= x <= 3 )
-  - for문에 iterable 한 객체는 다 들어올 수 있음
-    ```python
-    for i in (x-1, x+1, x*2): # 튜플, 리스트 가능
-      print(i)
-    ```
-  - 루트 적용하기 : ```Math.sqrt()```, ``` n ** 0.5```
   - 한 줄에 리스트 요소 다 출력하기 : ```print(" ".join(str(i) for i in result)) ```
   - 한 줄에 if문 넣기 : ```print("정답" if test() else "틀림")```
-  - 리스트 초기화 하기1 : ``` arr = [0] * 10 ```
-  - 문자열 + 연산자 사용 가능 : ```"happy" + "birthday"```
-  - 리스트 + 연산자 사용 가능 : ```[1, 2, 3] + [4, 5]```
-  - 리스트에 타입 다른 요소 넣기 가능 : ```[1, "hello", 3, 'a']```
   - 문자열에 숫자 있는지 판단하기 : String 내장 메서드로 제공됨 ```s.isdigit()```
   - 2차원 리스트 1차원 리스트로 변환하기 : ```sum(arr, []) # arr : 2차원 리스트```
   - for-else 문 : for문을 다 돌았을 때 break로 빠져나오지 못하면 else문 수행 되는 문법이 존재함
@@ -51,11 +41,7 @@
   - N < 1000만 : O(N)
  <br>
  
-[정렬]
 
-  - ```sorted(list, reverse=bool) : return 정렬된 객체```
-  - ```list.sort(reverse=bool)```
-  <br>
   
 [딕셔너리 정렬]
   ```python
@@ -75,23 +61,6 @@
   ```
   <br>
   
-[리스트 IndexError 무시하기]
- - try ~ except로 예외처리
-  <br>
-
-[코드 한 줄로 리스트 요소 모두 출력하기]
-  ```python
-  result = [1,2,3]
-  print(" ".join(str(i) for i in result))
-  ```
-  <br>
-  
-[사용자입력 빠르게 받기]
-  ```python
-  import sys
-  input = sys.stdin.readline # rstrip()을 나중에 붙혀줘야 개행문자 제거 됨
-  ```
-  <br>
   
  [최대 공약수와 최소 공배수]
   ```python
