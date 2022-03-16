@@ -1,30 +1,32 @@
-from collections import deque
 import sys
+
 input = sys.stdin.readline
-n = int(input())
-origin = list(map(int, input().split()))
-test = deque(list(map(int, input().split())))
 
+N = int(input())
+sequence = list(map(int, input().split()))
+compare = list(map(int, input().split()))
 
-def check(arr1, arr2):
-    for i in range(n):
-        if arr1[i] != arr2[i]:
-            return False
-    return True
+new_list1 = []
+new_list2 = []
 
+first_idx = compare.index(sequence[0])  # 기준점
 
-possible = False
-for _ in range(n):
-    if check(origin, test):
-        possible = True
-        break
-    test.reverse()
-    if check(origin, test):
-        possible = True
-        break
-    test.rotate(-1)
-    if check(origin, test):
-        possible = True
-        break
+# 순방향인 경우
+start = first_idx - N
+end = first_idx
 
-print("good puzzle" if possible else "bad puzzle")
+for i in range(start, end):
+    new_list1.append(compare[i])
+
+# 역방향인 경우
+start = first_idx
+end = first_idx - N
+
+for i in range(start, end, -1):
+    new_list2.append(compare[i])
+
+# 둘 중 하나 맞으면 good puzzle
+if sequence == new_list1 or sequence == new_list2:
+    print("good puzzle")
+else:
+    print("bad puzzle")
