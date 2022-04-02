@@ -29,6 +29,11 @@
   - for-else 문 : for문을 다 돌았을 때 break로 빠져나오지 못하면 else문 수행 되는 문법이 존재함
   - 문자열 뒤집기 : ```arr_string[::-1]```
   - 최대 재귀한도 해제하기 : ```sys.setrecursionlimit(10000)```
+  - 리스트, 딕셔너리, 튜플 모두 해당 자료형 이름으로 원소가 같은지, 다른지 비교 가능
+    ```python
+    arr1, arr2 = [1,2,3], [1,2,3]
+    print(arr1 == arr2)
+    ```
   <br>
 
 
